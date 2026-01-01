@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './../styles/App.css';
 
-const API_KEY = 'your_api_key_here';
+const API_KEY = 'f32c8eb706b47d5b00ddbef90c7c0325';
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
@@ -27,15 +27,17 @@ const App = () => {
         />
         <button type="submit">Search</button>
       </form>
-      <div className="weather">
-        <h2>{weatherData.name}</h2>
-        <p>Temperature: {weatherData.main?.temp}K</p>
-        <p>Weather: {weatherData.weather?.[0]?.description}</p>
-        <img
-          src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
-          alt={weatherData.weather[0].description}
-        />
-      </div>
+      {weatherData && (
+        <div className="weather">
+          <h2>{weatherData.name}</h2>
+          <p>Temperature: {weatherData.main?.temp}K</p>
+          <p>Weather: {weatherData.weather?.[0]?.description}</p>
+          <img
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+            alt={weatherData.weather[0].description}
+          />
+        </div>
+      )}
     </div>
   );
 };
