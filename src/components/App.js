@@ -15,6 +15,7 @@ const App = () => {
       .then((res) => res.json())
       .then((data) => setWeatherData(data))
       .catch((err) => console.log(err));
+    setSearch('');
   };
 
   return (
