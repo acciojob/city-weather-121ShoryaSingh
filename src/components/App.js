@@ -25,6 +25,7 @@ const App = () => {
           className="search"
           type="text"
           onChange={(e) => setSearch(e.target.value)}
+          value={search}
         />
         <button type="submit">Search</button>
       </form>
