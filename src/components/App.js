@@ -21,7 +21,7 @@ const App = () => {
     <div>
       <form onSubmit={handleWeatherData}>
         <input
-          id="search"
+          className="search"
           type="text"
           onChange={(e) => setSearch(e.target.value)}
         />
